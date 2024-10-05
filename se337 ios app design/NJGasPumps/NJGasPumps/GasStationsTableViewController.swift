@@ -63,13 +63,27 @@ class GasStationsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cell_reuse_identifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cell_reuse_identifier, for: indexPath) as! GasStationCell
 
         // Configure the cell...
-        cell.textLabel?.text = self.gas_stations[indexPath.row]
+//        cell.textLabel?.text = self.gas_stations[indexPath.row]
+        cell.stationName.text = self.gas_stations[indexPath.row]
 
         return cell
     }
+
+    /*
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cell_reuse_identifier, for: indexPath) as! GasStationCell
+
+        cell.stationName.text = myTeams[indexPath.row].name
+        
+        return cell
+    }
+     
+     */
+    
 
     /*
     // Override to support conditional editing of the table view.
