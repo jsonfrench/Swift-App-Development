@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		FFB1BFDC2CBF696A004ADC2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFB1BFBD2CBF6968004ADC2B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFB1BFC42CBF6968004ADC2B;
+			remoteInfo = "Mark Shark";
+		};
+		FFB1BFE62CBF696A004ADC2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFB1BFBD2CBF6968004ADC2B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFB1BFC42CBF6968004ADC2B;
+			remoteInfo = "Mark Shark";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FFB1BFC52CBF6968004ADC2B /* Mark Shark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mark Shark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFB1BFDB2CBF696A004ADC2B /* Mark SharkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mark SharkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFB1BFE52CBF696A004ADC2B /* Mark SharkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mark SharkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FFB1BFED2CBF696A004ADC2B /* Exceptions for "Mark Shark" folder in "Mark Shark" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FFB1BFC42CBF6968004ADC2B /* Mark Shark */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FFB1BFC72CBF6968004ADC2B /* Mark Shark */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FFB1BFED2CBF696A004ADC2B /* Exceptions for "Mark Shark" folder in "Mark Shark" target */,
+			);
+			path = "Mark Shark";
+			sourceTree = "<group>";
+		};
+		FFB1BFDE2CBF696A004ADC2B /* Mark SharkTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Mark SharkTests";
+			sourceTree = "<group>";
+		};
+		FFB1BFE82CBF696A004ADC2B /* Mark SharkUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Mark SharkUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFB1BFC22CBF6968004ADC2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFB1BFD82CBF696A004ADC2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFB1BFE22CBF696A004ADC2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFB1BFBC2CBF6968004ADC2B = {
+			isa = PBXGroup;
+			children = (
+				FFB1BFC72CBF6968004ADC2B /* Mark Shark */,
+				FFB1BFDE2CBF696A004ADC2B /* Mark SharkTests */,
+				FFB1BFE82CBF696A004ADC2B /* Mark SharkUITests */,
+				FFB1BFC62CBF6968004ADC2B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFB1BFC62CBF6968004ADC2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFB1BFC52CBF6968004ADC2B /* Mark Shark.app */,
+				FFB1BFDB2CBF696A004ADC2B /* Mark SharkTests.xctest */,
+				FFB1BFE52CBF696A004ADC2B /* Mark SharkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFB1BFC42CBF6968004ADC2B /* Mark Shark */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFB1BFEE2CBF696A004ADC2B /* Build configuration list for PBXNativeTarget "Mark Shark" */;
+			buildPhases = (
+				FFB1BFC12CBF6968004ADC2B /* Sources */,
+				FFB1BFC22CBF6968004ADC2B /* Frameworks */,
+				FFB1BFC32CBF6968004ADC2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FFB1BFC72CBF6968004ADC2B /* Mark Shark */,
+			);
+			name = "Mark Shark";
+			packageProductDependencies = (
+			);
+			productName = "Mark Shark";
+			productReference = FFB1BFC52CBF6968004ADC2B /* Mark Shark.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FFB1BFDA2CBF696A004ADC2B /* Mark SharkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFB1BFF32CBF696A004ADC2B /* Build configuration list for PBXNativeTarget "Mark SharkTests" */;
+			buildPhases = (
+				FFB1BFD72CBF696A004ADC2B /* Sources */,
+				FFB1BFD82CBF696A004ADC2B /* Frameworks */,
+				FFB1BFD92CBF696A004ADC2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFB1BFDD2CBF696A004ADC2B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FFB1BFDE2CBF696A004ADC2B /* Mark SharkTests */,
+			);
+			name = "Mark SharkTests";
+			packageProductDependencies = (
+			);
+			productName = "Mark SharkTests";
+			productReference = FFB1BFDB2CBF696A004ADC2B /* Mark SharkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FFB1BFE42CBF696A004ADC2B /* Mark SharkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFB1BFF62CBF696A004ADC2B /* Build configuration list for PBXNativeTarget "Mark SharkUITests" */;
+			buildPhases = (
+				FFB1BFE12CBF696A004ADC2B /* Sources */,
+				FFB1BFE22CBF696A004ADC2B /* Frameworks */,
+				FFB1BFE32CBF696A004ADC2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFB1BFE72CBF696A004ADC2B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FFB1BFE82CBF696A004ADC2B /* Mark SharkUITests */,
+			);
+			name = "Mark SharkUITests";
+			packageProductDependencies = (
+			);
+			productName = "Mark SharkUITests";
+			productReference = FFB1BFE52CBF696A004ADC2B /* Mark SharkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFB1BFBD2CBF6968004ADC2B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					FFB1BFC42CBF6968004ADC2B = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					FFB1BFDA2CBF696A004ADC2B = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = FFB1BFC42CBF6968004ADC2B;
+					};
+					FFB1BFE42CBF696A004ADC2B = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = FFB1BFC42CBF6968004ADC2B;
+					};
+				};
+			};
+			buildConfigurationList = FFB1BFC02CBF6968004ADC2B /* Build configuration list for PBXProject "Mark Shark" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFB1BFBC2CBF6968004ADC2B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = FFB1BFC62CBF6968004ADC2B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFB1BFC42CBF6968004ADC2B /* Mark Shark */,
+				FFB1BFDA2CBF696A004ADC2B /* Mark SharkTests */,
+				FFB1BFE42CBF696A004ADC2B /* Mark SharkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFB1BFC32CBF6968004ADC2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFB1BFD92CBF696A004ADC2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFB1BFE32CBF696A004ADC2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFB1BFC12CBF6968004ADC2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFB1BFD72CBF696A004ADC2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFB1BFE12CBF696A004ADC2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFB1BFDD2CBF696A004ADC2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFB1BFC42CBF6968004ADC2B /* Mark Shark */;
+			targetProxy = FFB1BFDC2CBF696A004ADC2B /* PBXContainerItemProxy */;
+		};
+		FFB1BFE72CBF696A004ADC2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFB1BFC42CBF6968004ADC2B /* Mark Shark */;
+			targetProxy = FFB1BFE62CBF696A004ADC2B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FFB1BFEF2CBF696A004ADC2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 37VPY58WLV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mark Shark/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.monmouth.s1338331.Mark-Shark";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FFB1BFF02CBF696A004ADC2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 37VPY58WLV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mark Shark/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.monmouth.s1338331.Mark-Shark";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FFB1BFF12CBF696A004ADC2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FFB1BFF22CBF696A004ADC2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFB1BFF42CBF696A004ADC2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 37VPY58WLV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.monmouth.s1338331.Mark-SharkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mark Shark.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mark Shark";
+			};
+			name = Debug;
+		};
+		FFB1BFF52CBF696A004ADC2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 37VPY58WLV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.monmouth.s1338331.Mark-SharkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mark Shark.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mark Shark";
+			};
+			name = Release;
+		};
+		FFB1BFF72CBF696A004ADC2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 37VPY58WLV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.monmouth.s1338331.Mark-SharkUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Mark Shark";
+			};
+			name = Debug;
+		};
+		FFB1BFF82CBF696A004ADC2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 37VPY58WLV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.monmouth.s1338331.Mark-SharkUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Mark Shark";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFB1BFC02CBF6968004ADC2B /* Build configuration list for PBXProject "Mark Shark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFB1BFF12CBF696A004ADC2B /* Debug */,
+				FFB1BFF22CBF696A004ADC2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFB1BFEE2CBF696A004ADC2B /* Build configuration list for PBXNativeTarget "Mark Shark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFB1BFEF2CBF696A004ADC2B /* Debug */,
+				FFB1BFF02CBF696A004ADC2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFB1BFF32CBF696A004ADC2B /* Build configuration list for PBXNativeTarget "Mark SharkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFB1BFF42CBF696A004ADC2B /* Debug */,
+				FFB1BFF52CBF696A004ADC2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFB1BFF62CBF696A004ADC2B /* Build configuration list for PBXNativeTarget "Mark SharkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFB1BFF72CBF696A004ADC2B /* Debug */,
+				FFB1BFF82CBF696A004ADC2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFB1BFBD2CBF6968004ADC2B /* Project object */;
+}
