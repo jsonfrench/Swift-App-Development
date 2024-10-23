@@ -35,7 +35,12 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ijn-0j-HcH">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <gestureRecognizers/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0HH-dn-Kf7" appends="YES" id="W9a-bE-4wq"/>
+                                    <outletCollection property="gestureRecognizers" destination="0HH-dn-Kf7" appends="YES" id="3DZ-gP-ZwJ"/>
+                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2U-aN-r3g">
                                 <rect key="frame" x="50" y="688" width="293" height="80"/>
@@ -72,18 +77,24 @@
                     <navigationItem key="navigationItem" title="Add Parking Spot" id="0Da-o6-PDV"/>
                     <connections>
                         <outlet property="add_spot_button" destination="N2U-aN-r3g" id="DGh-TR-r5j"/>
+                        <outlet property="map_tap_gesture" destination="0HH-dn-Kf7" id="PM0-W3-GRH"/>
                         <outlet property="parking_lot_map_view" destination="ijn-0j-HcH" id="479-Pd-okA"/>
                         <segue destination="t4f-n8-D9h" kind="show" identifier="spot detail segue" id="ysA-fl-AZj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lo7-Zp-xh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0HH-dn-Kf7">
+                    <connections>
+                        <action selector="didTapMap:" destination="Kkb-28-Ibq" id="zuG-Vj-3Dr"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="17.557251908396946" y="-218.3098591549296"/>
         </scene>
         <!--Parking Spot Settings-->
         <scene sceneID="Xz1-O5-z0Z">
             <objects>
-                <tableViewController id="t4f-n8-D9h" sceneMemberID="viewController">
+                <tableViewController id="t4f-n8-D9h" customClass="SpotAttributesTableViewController" customModule="Mark_Shark" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="oqv-Vn-i7l">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,26 +107,26 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJP-H6-lUi">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="96"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vJP-H6-lUi">
+                                            <rect key="frame" x="25" y="0.0" width="343" height="96"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ID1-Tp-sxp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="344" height="96"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ID1-Tp-sxp">
+                                                    <rect key="frame" x="0.0" y="38" width="294" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rom-6z-Gc3">
-                                                    <rect key="frame" x="344" y="0.0" width="51" height="96"/>
+                                                    <rect key="frame" x="294" y="32.666666666666664" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="vJP-H6-lUi" firstAttribute="leading" secondItem="OpR-6Q-57O" secondAttribute="leading" constant="25" id="3TH-aT-Lwb"/>
                                         <constraint firstItem="vJP-H6-lUi" firstAttribute="top" secondItem="OpR-6Q-57O" secondAttribute="top" id="78m-6Q-kEc"/>
-                                        <constraint firstItem="vJP-H6-lUi" firstAttribute="leading" secondItem="OpR-6Q-57O" secondAttribute="leading" id="8Sj-aL-wbk"/>
+                                        <constraint firstAttribute="trailing" secondItem="vJP-H6-lUi" secondAttribute="trailing" constant="25" id="8Po-aL-IgC"/>
                                         <constraint firstAttribute="bottom" secondItem="vJP-H6-lUi" secondAttribute="bottom" id="G9h-pY-S8p"/>
-                                        <constraint firstAttribute="trailing" secondItem="vJP-H6-lUi" secondAttribute="trailing" id="QcB-Y2-w84"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
