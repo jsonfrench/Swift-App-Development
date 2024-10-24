@@ -18,12 +18,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Kkb-28-Ibq" kind="relationship" relationship="rootViewController" id="Js5-kI-0xu"/>
+                        <segue destination="t4f-n8-D9h" kind="relationship" relationship="rootViewController" id="ZgR-U7-NI5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ifu-CV-Sm2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-964" y="-218"/>
+            <point key="canvasLocation" x="-1702" y="-218"/>
         </scene>
         <!--Add Parking Spot-->
         <scene sceneID="Zgm-2x-1og">
@@ -33,53 +33,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ijn-0j-HcH">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
-                                <gestureRecognizers/>
-                                <standardMapConfiguration key="preferredConfiguration"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="0HH-dn-Kf7" appends="YES" id="W9a-bE-4wq"/>
-                                    <outletCollection property="gestureRecognizers" destination="0HH-dn-Kf7" appends="YES" id="3DZ-gP-ZwJ"/>
-                                </connections>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2U-aN-r3g">
-                                <rect key="frame" x="50" y="688" width="293" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="kFE-j8-aXB"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add Spot" cornerStyle="medium">
-                                    <fontDescription key="titleFontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="28"/>
-                                    <color key="baseBackgroundColor" red="0.94509804249999996" green="0.61568629740000003" blue="0.22745099660000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="addSpot:" destination="Kkb-28-Ibq" eventType="touchUpInside" id="Ps4-A4-7fU"/>
-                                </connections>
-                            </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NnW-AZ-ZJz">
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ijn-0j-HcH">
+                                <rect key="frame" x="0.0" y="303" width="393" height="515"/>
+                                <gestureRecognizers/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0HH-dn-Kf7" appends="YES" id="3DZ-gP-ZwJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="0HH-dn-Kf7" appends="YES" id="W9a-bE-4wq"/>
+                                </connections>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eM6-iq-pBT">
+                                <rect key="frame" x="25" y="103" width="343" height="200"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Cu2-bp-B1c">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="66.666666666666671"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handicapped" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhX-h6-LPP">
+                                                <rect key="frame" x="0.0" y="23.333333333333329" width="294" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="W7h-3l-bRG">
+                                                <rect key="frame" x="294" y="18" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UwW-fK-AxM">
+                                        <rect key="frame" x="0.0" y="66.666666666666657" width="343" height="66.666666666666657"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faculty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwn-2K-Pvk">
+                                                <rect key="frame" x="0.0" y="23.333333333333343" width="294" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sHK-hC-dSZ">
+                                                <rect key="frame" x="294" y="18" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cjg-3a-QiJ">
+                                        <rect key="frame" x="0.0" y="133.33333333333334" width="343" height="66.666666666666657"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reserved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1u-KU-8s0">
+                                                <rect key="frame" x="0.0" y="23.333333333333343" width="294" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0dI-JA-wpn">
+                                                <rect key="frame" x="294" y="18" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="03i-7j-Gp4"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4WU-QQ-dJS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4WU-QQ-dJS" firstAttribute="trailing" secondItem="N2U-aN-r3g" secondAttribute="trailing" constant="50" id="4lk-Cb-EqJ"/>
-                            <constraint firstItem="ijn-0j-HcH" firstAttribute="top" secondItem="4WU-QQ-dJS" secondAttribute="top" id="DtP-Td-Hke"/>
-                            <constraint firstItem="N2U-aN-r3g" firstAttribute="leading" secondItem="4WU-QQ-dJS" secondAttribute="leading" constant="50" id="Ktx-8L-hOc"/>
-                            <constraint firstItem="4WU-QQ-dJS" firstAttribute="bottom" secondItem="N2U-aN-r3g" secondAttribute="bottom" constant="50" id="b6R-J2-kXh"/>
-                            <constraint firstItem="4WU-QQ-dJS" firstAttribute="trailing" secondItem="ijn-0j-HcH" secondAttribute="trailing" id="bTb-c8-pFE"/>
-                            <constraint firstItem="N2U-aN-r3g" firstAttribute="centerX" secondItem="HMI-bQ-N7M" secondAttribute="centerX" id="eYq-WU-TXv"/>
-                            <constraint firstItem="ijn-0j-HcH" firstAttribute="leading" secondItem="4WU-QQ-dJS" secondAttribute="leading" id="fVA-OB-BUG"/>
-                            <constraint firstItem="4WU-QQ-dJS" firstAttribute="bottom" secondItem="ijn-0j-HcH" secondAttribute="bottom" id="jPo-xx-3CO"/>
+                            <constraint firstItem="ijn-0j-HcH" firstAttribute="bottom" secondItem="4WU-QQ-dJS" secondAttribute="bottom" id="58y-z2-ffi"/>
+                            <constraint firstItem="eM6-iq-pBT" firstAttribute="top" secondItem="4WU-QQ-dJS" secondAttribute="top" id="aDp-Fu-2lX"/>
+                            <constraint firstItem="ijn-0j-HcH" firstAttribute="trailing" secondItem="4WU-QQ-dJS" secondAttribute="trailing" id="hME-im-AQH"/>
+                            <constraint firstItem="ijn-0j-HcH" firstAttribute="top" secondItem="eM6-iq-pBT" secondAttribute="bottom" id="kep-kK-LBq"/>
+                            <constraint firstItem="ijn-0j-HcH" firstAttribute="leading" secondItem="4WU-QQ-dJS" secondAttribute="leading" id="qpk-aK-BbR"/>
+                            <constraint firstItem="eM6-iq-pBT" firstAttribute="leading" secondItem="4WU-QQ-dJS" secondAttribute="leading" constant="25" id="vmG-SN-3wT"/>
+                            <constraint firstItem="4WU-QQ-dJS" firstAttribute="trailing" secondItem="eM6-iq-pBT" secondAttribute="trailing" constant="25" id="vsE-xv-BLh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Parking Spot" id="0Da-o6-PDV"/>
                     <connections>
-                        <outlet property="add_spot_button" destination="N2U-aN-r3g" id="DGh-TR-r5j"/>
+                        <outlet property="faculty_switch" destination="sHK-hC-dSZ" id="Xex-tQ-ohP"/>
+                        <outlet property="handicapped_switch" destination="W7h-3l-bRG" id="rWN-FO-NBT"/>
                         <outlet property="map_tap_gesture" destination="0HH-dn-Kf7" id="PM0-W3-GRH"/>
                         <outlet property="parking_lot_map_view" destination="ijn-0j-HcH" id="479-Pd-okA"/>
-                        <segue destination="t4f-n8-D9h" kind="show" identifier="spot detail segue" id="ysA-fl-AZj"/>
+                        <outlet property="reserved_switch" destination="0dI-JA-wpn" id="pPs-bn-OVc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lo7-Zp-xh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -91,16 +127,16 @@
             </objects>
             <point key="canvasLocation" x="17.557251908396946" y="-218.3098591549296"/>
         </scene>
-        <!--Parking Spot Settings-->
+        <!--Select Lot-->
         <scene sceneID="Xz1-O5-z0Z">
             <objects>
-                <tableViewController id="t4f-n8-D9h" customClass="SpotAttributesTableViewController" customModule="Mark_Shark" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="t4f-n8-D9h" customClass="SelectLotTableViewController" customModule="Mark_Shark" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="oqv-Vn-i7l">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="spot attribute" rowHeight="96" id="hy1-dN-gP4" customClass="SpotOptionCell" customModule="Mark_Shark" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="lot number" rowHeight="96" id="hy1-dN-gP4" customClass="SelectLotViewCell" customModule="Mark_Shark" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hy1-dN-gP4" id="OpR-6Q-57O">
@@ -111,14 +147,11 @@
                                             <rect key="frame" x="25" y="0.0" width="343" height="96"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ID1-Tp-sxp">
-                                                    <rect key="frame" x="0.0" y="38" width="294" height="20.333333333333329"/>
+                                                    <rect key="frame" x="0.0" y="38" width="343" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rom-6z-Gc3">
-                                                    <rect key="frame" x="294" y="32.666666666666664" width="51" height="31"/>
-                                                </switch>
                                             </subviews>
                                         </stackView>
                                     </subviews>
@@ -131,7 +164,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="option_title" destination="ID1-Tp-sxp" id="hwm-4H-cgB"/>
-                                    <outlet property="toggle_switch" destination="Rom-6z-Gc3" id="giL-co-EuR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -140,11 +172,91 @@
                             <outlet property="delegate" destination="t4f-n8-D9h" id="bR3-M3-4Jl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Parking Spot Settings" id="OxF-nX-eRm"/>
+                    <navigationItem key="navigationItem" title="Select Lot" id="OxF-nX-eRm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FFy-Da-4yS">
+                            <connections>
+                                <action selector="didSelectAddLot:" destination="t4f-n8-D9h" id="4dd-lx-1op"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="add_lot_button" destination="FFy-Da-4yS" id="TWp-cN-NfM"/>
+                        <segue destination="Kkb-28-Ibq" kind="show" identifier="add spot segue" id="syx-T5-bY2"/>
+                        <segue destination="fel-br-wRn" kind="show" identifier="add lot segue" id="K1X-fS-ve7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KtF-tZ-emK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006.8702290076335" y="-218.3098591549296"/>
+            <point key="canvasLocation" x="-844" y="-218"/>
+        </scene>
+        <!--Create New Lot-->
+        <scene sceneID="Prv-gT-4IY">
+            <objects>
+                <viewController id="fel-br-wRn" customClass="AddLotViewController" customModule="Mark_Shark" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T7v-IJ-10U">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZfC-tA-jXp">
+                                <rect key="frame" x="25" y="103" width="343" height="100"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xDh-iR-8vn">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lot Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4Y-UA-5cS">
+                                                <rect key="frame" x="0.0" y="40" width="171.66666666666666" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vmk-bf-Hun">
+                                                <rect key="frame" x="171.66666666666663" y="33" width="171.33333333333337" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="didReturn:" destination="fel-br-wRn" eventType="primaryActionTriggered" id="YzB-FW-TCp"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="z7T-3q-wFT"/>
+                                </constraints>
+                            </stackView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2oO-hg-Mda">
+                                <rect key="frame" x="0.0" y="203" width="393" height="615"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="E3L-TP-IyB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E3L-TP-IyB" firstAttribute="bottom" secondItem="2oO-hg-Mda" secondAttribute="bottom" id="2W0-qW-lcN"/>
+                            <constraint firstItem="ZfC-tA-jXp" firstAttribute="top" secondItem="E3L-TP-IyB" secondAttribute="top" id="JE9-Dq-BhN"/>
+                            <constraint firstItem="2oO-hg-Mda" firstAttribute="leading" secondItem="E3L-TP-IyB" secondAttribute="leading" id="hKz-su-y4G"/>
+                            <constraint firstItem="E3L-TP-IyB" firstAttribute="trailing" secondItem="ZfC-tA-jXp" secondAttribute="trailing" constant="25" id="kay-Mj-ysc"/>
+                            <constraint firstItem="2oO-hg-Mda" firstAttribute="trailing" secondItem="E3L-TP-IyB" secondAttribute="trailing" id="olF-kS-kA2"/>
+                            <constraint firstItem="2oO-hg-Mda" firstAttribute="top" secondItem="ZfC-tA-jXp" secondAttribute="bottom" id="tls-rs-7nA"/>
+                            <constraint firstItem="ZfC-tA-jXp" firstAttribute="leading" secondItem="E3L-TP-IyB" secondAttribute="leading" constant="25" id="wf9-j1-Kc6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create New Lot" id="uw5-66-RGS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ftx-9s-udP">
+                            <connections>
+                                <action selector="didSelectDone:" destination="fel-br-wRn" id="ohI-dm-gsY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="done_button" destination="ftx-9s-udP" id="BDT-iI-cYT"/>
+                        <outlet property="lot_name_field" destination="vmk-bf-Hun" id="l8R-Au-EbD"/>
+                        <outlet property="map_view" destination="2oO-hg-Mda" id="9g6-cb-zNd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PKk-bi-OPb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-845" y="508"/>
         </scene>
     </scenes>
     <resources>

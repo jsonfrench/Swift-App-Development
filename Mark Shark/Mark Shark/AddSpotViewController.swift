@@ -13,15 +13,21 @@ class AddSpotViewController: UIViewController, CLLocationManagerDelegate, UIGest
     
     // Set up constants, outlets, classes here //
     
-    let locationManager = CLLocationManager()
-    var mapType = MKMapType.satellite
-    @IBOutlet var map_tap_gesture: UITapGestureRecognizer!
-    
     // parking lot location:
     // 40.2776, -74.007417
 
+    let locationManager = CLLocationManager()
+    var selected_lot: String?
+    var mapType = MKMapType.satellite
+    
+    @IBOutlet var map_tap_gesture: UITapGestureRecognizer!
     @IBOutlet weak var parking_lot_map_view: MKMapView!
-    @IBOutlet weak var add_spot_button: UIButton!
+    
+    // switches
+    @IBOutlet weak var handicapped_switch: UISwitch!
+    @IBOutlet weak var faculty_switch: UISwitch!
+    @IBOutlet weak var reserved_switch: UISwitch!
+    
     
     // Manage view loading, appearing, dissapearing //
     
@@ -40,8 +46,11 @@ class AddSpotViewController: UIViewController, CLLocationManagerDelegate, UIGest
 
         parking_lot_map_view.mapType = .satellite
         parking_lot_map_view.showsUserLocation = true
-//        parking_lot_map_view.userTrackingMode = .follow
+//        parking_lot_map_view.userTrackingMode = .follow.
         
+        if (selected_lot != nil) {
+            self.title = selected_lot
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -74,29 +83,6 @@ class AddSpotViewController: UIViewController, CLLocationManagerDelegate, UIGest
     
     // UI Management //
     
-    // press "Add Spot" button
-    @IBAction func addSpot(_ sender: Any) {
-        //print("location \(parking_lot_map_view.userLocation.coordinate)")
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = parking_lot_map_view.userLocation.coordinate
-        annotation.title = "Spot"
-        annotation.subtitle = "added spot through button"
-        parking_lot_map_view.addAnnotation(annotation)
-        
-        performSegue(withIdentifier: "spot detail segue", sender: self)
-    }
-    
-    // manage segue to other view
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "spot detail segue" {
-            let destinationViewController = segue.destination as! SpotAttributesTableViewController
-            destinationViewController.coordinate = parking_lot_map_view.userLocation.coordinate
-            destinationViewController.annotation_title = "parking spot"
-            destinationViewController.annotation_subtitle = "parking spot subtitle"
-        }
-    }
-    
-    
     // add annotation functions //
     
     func addNewAnnotation(coordinate: CLLocationCoordinate2D, title: String, subtitle: String) {
@@ -118,7 +104,7 @@ class AddSpotViewController: UIViewController, CLLocationManagerDelegate, UIGest
     //add annotation with tap
     @IBAction func didTapMap(_ sender: UITapGestureRecognizer) {
         
-        let tap_location = sender.location(in: view)
+        let tap_location = sender.location(in: parking_lot_map_view)
         let map_location = parking_lot_map_view.convert(tap_location, toCoordinateFrom: parking_lot_map_view)
 
         print("tap \(x) at \(tap_location) -> \(map_location)")
