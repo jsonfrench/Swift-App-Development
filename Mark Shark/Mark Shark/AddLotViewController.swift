@@ -16,9 +16,13 @@ class AddLotViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var map_view: MKMapView!
     @IBOutlet weak var done_button: UIBarButtonItem!
     @IBOutlet weak var lot_name_field: UITextField!
+    @IBOutlet weak var lot_region_background: UIView!
+    @IBOutlet var tap_recognizer: UITapGestureRecognizer!
     
     let locationManager = CLLocationManager()
     var lot_table: SelectLotTableViewController?
+    let lot_model = lotModel.getInstance()
+    
 
     // View management //
     
@@ -27,6 +31,7 @@ class AddLotViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view.
         
         done_button.isEnabled = false
+        lot_name_field.addTarget(self, action: #selector(didEnterName), for: .editingChanged)
 
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation // precise accuracy needed to pinpoint parking spots
@@ -36,6 +41,8 @@ class AddLotViewController: UIViewController, CLLocationManagerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        lot_region_background.layer.cornerRadius = 5
+
         locationManager.startUpdatingLocation()
         map_view.mapType = .satellite
         map_view.showsUserLocation = true
@@ -59,32 +66,36 @@ class AddLotViewController: UIViewController, CLLocationManagerDelegate {
         print("Error: \(error)")
     }
 
-    @IBAction func didReturn(_ sender: Any) {
-        lot_name_field.resignFirstResponder()
-        done_button.isEnabled = true    // <- placeholder until i implement and observer for the text field
+    @objc func didEnterName(){
+        done_button.isEnabled = true
     }
     
+    // Close out the keyboard //
+    
+    @IBAction func didReturn(_ sender: Any) {
+        lot_name_field.endEditing(true)
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        lot_name_field.endEditing(true)
+    }
+
     @IBAction func didSelectDone(_ sender: Any) {
-        let lot_name = lot_name_field.text
-        lot_table!.addLot(name: lot_name!)
+        let lot_name = lot_name_field.text!
+        let lot_region = map_view.region
+        
+        var lot_id: Int?
+        
+        let lots = lot_model.getLots()
+        if !lots.isEmpty{
+            lot_id = lots[lots.count-1].lotId + 1
+        } else {
+            lot_id = 0
+        }
+        
+        lot_model.addLot(name: lot_name, view: lot_region, lotId: lot_id!)
+        
         navigationController?.popViewController(animated: true)
     }
     
 }
-
-
-    
-
-    // to do
-    
-    // edit name of lot
-    // on done, add new lot information to lots model
-    
-    // "done" starts off inactive
-    // "done" switches to active if lot name is entered - observer pattern?
-    
-    // display coordinates? - enter coordinates as text?
-    // center coordinates or MKRegion?
-
-    // add objserver to tell when text has been entered to enable "done"
-    

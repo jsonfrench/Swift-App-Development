@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QSd-5A-LzD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QSd-5A-LzD">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -37,58 +38,65 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </navigationBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ijn-0j-HcH">
-                                <rect key="frame" x="0.0" y="303" width="393" height="515"/>
-                                <gestureRecognizers/>
-                                <standardMapConfiguration key="preferredConfiguration"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="0HH-dn-Kf7" appends="YES" id="3DZ-gP-ZwJ"/>
-                                    <outletCollection property="gestureRecognizers" destination="0HH-dn-Kf7" appends="YES" id="W9a-bE-4wq"/>
-                                </connections>
-                            </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eM6-iq-pBT">
                                 <rect key="frame" x="25" y="103" width="343" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Cu2-bp-B1c">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="66.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handicapped" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhX-h6-LPP">
-                                                <rect key="frame" x="0.0" y="23.333333333333329" width="294" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="14.999999999999998" width="294" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="W7h-3l-bRG">
-                                                <rect key="frame" x="294" y="18" width="51" height="31"/>
+                                                <rect key="frame" x="294" y="9.6666666666666714" width="51" height="31"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UwW-fK-AxM">
-                                        <rect key="frame" x="0.0" y="66.666666666666657" width="343" height="66.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="50" width="343" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faculty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwn-2K-Pvk">
-                                                <rect key="frame" x="0.0" y="23.333333333333343" width="294" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="14.999999999999998" width="294" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sHK-hC-dSZ">
-                                                <rect key="frame" x="294" y="18" width="51" height="31"/>
+                                                <rect key="frame" x="294" y="9.6666666666666572" width="51" height="31"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cjg-3a-QiJ">
-                                        <rect key="frame" x="0.0" y="133.33333333333334" width="343" height="66.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="100" width="343" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reserved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1u-KU-8s0">
-                                                <rect key="frame" x="0.0" y="23.333333333333343" width="294" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="14.999999999999998" width="294" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0dI-JA-wpn">
-                                                <rect key="frame" x="294" y="18" width="51" height="31"/>
+                                                <rect key="frame" x="294" y="9.6666666666666572" width="51" height="31"/>
                                             </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="HvI-WQ-pkJ">
+                                        <rect key="frame" x="0.0" y="150" width="343" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spot Number: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aa9-Nb-Vrb">
+                                                <rect key="frame" x="0.0" y="14.999999999999998" width="110.66666666666667" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Le-R6-Fbx">
+                                                <rect key="frame" x="135.66666666666663" y="8" width="207.33333333333337" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -96,34 +104,75 @@
                                     <constraint firstAttribute="height" constant="200" id="03i-7j-Gp4"/>
                                 </constraints>
                             </stackView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ijn-0j-HcH">
+                                <rect key="frame" x="0.0" y="303" width="393" height="515"/>
+                                <gestureRecognizers/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0HH-dn-Kf7" appends="YES" id="W9a-bE-4wq"/>
+                                    <outletCollection property="gestureRecognizers" destination="p70-3F-xj8" appends="YES" id="QBz-IY-5Qv"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6Z-vb-5aR">
+                                <rect key="frame" x="303" y="728" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="E6Z-vb-5aR" secondAttribute="height" multiplier="1:1" id="Dd6-XN-bFC"/>
+                                    <constraint firstAttribute="width" constant="75" id="Row-To-cTG"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="default"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font" weight="regular">
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="50"/>
+                                    </preferredSymbolConfiguration>
+                                    <color key="baseBackgroundColor" red="0.94509804249999996" green="0.61568629740000003" blue="0.22745099660000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="add_spot:" destination="Kkb-28-Ibq" eventType="touchUpInside" id="JpH-bB-2eV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4WU-QQ-dJS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ijn-0j-HcH" firstAttribute="bottom" secondItem="4WU-QQ-dJS" secondAttribute="bottom" id="58y-z2-ffi"/>
                             <constraint firstItem="eM6-iq-pBT" firstAttribute="top" secondItem="4WU-QQ-dJS" secondAttribute="top" id="aDp-Fu-2lX"/>
                             <constraint firstItem="ijn-0j-HcH" firstAttribute="trailing" secondItem="4WU-QQ-dJS" secondAttribute="trailing" id="hME-im-AQH"/>
                             <constraint firstItem="ijn-0j-HcH" firstAttribute="top" secondItem="eM6-iq-pBT" secondAttribute="bottom" id="kep-kK-LBq"/>
                             <constraint firstItem="ijn-0j-HcH" firstAttribute="leading" secondItem="4WU-QQ-dJS" secondAttribute="leading" id="qpk-aK-BbR"/>
+                            <constraint firstItem="ijn-0j-HcH" firstAttribute="trailing" secondItem="E6Z-vb-5aR" secondAttribute="trailing" constant="15" id="tR6-lG-3tw"/>
+                            <constraint firstItem="ijn-0j-HcH" firstAttribute="bottom" secondItem="E6Z-vb-5aR" secondAttribute="bottom" constant="15" id="uag-sr-SKF"/>
                             <constraint firstItem="eM6-iq-pBT" firstAttribute="leading" secondItem="4WU-QQ-dJS" secondAttribute="leading" constant="25" id="vmG-SN-3wT"/>
                             <constraint firstItem="4WU-QQ-dJS" firstAttribute="trailing" secondItem="eM6-iq-pBT" secondAttribute="trailing" constant="25" id="vsE-xv-BLh"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Wxd-4E-cRD" appends="YES" id="I57-tO-c5h"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Add Parking Spot" id="0Da-o6-PDV"/>
                     <connections>
+                        <outlet property="add_spot_button" destination="E6Z-vb-5aR" id="O20-mw-9mG"/>
                         <outlet property="faculty_switch" destination="sHK-hC-dSZ" id="Xex-tQ-ohP"/>
                         <outlet property="handicapped_switch" destination="W7h-3l-bRG" id="rWN-FO-NBT"/>
-                        <outlet property="map_tap_gesture" destination="0HH-dn-Kf7" id="PM0-W3-GRH"/>
                         <outlet property="parking_lot_map_view" destination="ijn-0j-HcH" id="479-Pd-okA"/>
                         <outlet property="reserved_switch" destination="0dI-JA-wpn" id="pPs-bn-OVc"/>
+                        <outlet property="spot_number_field" destination="0Le-R6-Fbx" id="cnC-FP-K5j"/>
+                        <outlet property="tap_gesture_recognizer" destination="0HH-dn-Kf7" id="PM0-W3-GRH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lo7-Zp-xh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="0HH-dn-Kf7">
+                <tapGestureRecognizer id="Wxd-4E-cRD" userLabel="dismiss keyboard recognizer">
                     <connections>
-                        <action selector="didTapMap:" destination="Kkb-28-Ibq" id="zuG-Vj-3Dr"/>
+                        <action selector="dismiss_keyboard:" destination="Kkb-28-Ibq" id="N3q-Cb-pg1"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="0HH-dn-Kf7">
+                    <connections>
+                        <action selector="userDidTap:" destination="Kkb-28-Ibq" id="IYl-Lx-90g"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="p70-3F-xj8"/>
             </objects>
             <point key="canvasLocation" x="17.557251908396946" y="-218.3098591549296"/>
         </scene>
@@ -220,19 +269,44 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="z7T-3q-wFT"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="BYu-9o-JZl" appends="YES" id="whg-6t-ACy"/>
+                                </connections>
                             </stackView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2oO-hg-Mda">
                                 <rect key="frame" x="0.0" y="203" width="393" height="615"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTH-rf-X6x">
+                                <rect key="frame" x="15" y="218" width="110" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lot Region: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbh-kd-Tli">
+                                        <rect key="frame" x="10" y="5" width="90" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.89795918367346939" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="jbh-kd-Tli" firstAttribute="centerX" secondItem="tTH-rf-X6x" secondAttribute="centerX" id="Beu-Sp-t9P"/>
+                                    <constraint firstAttribute="width" constant="110" id="cem-k3-nZm"/>
+                                    <constraint firstAttribute="height" constant="30" id="mnq-3m-FQX"/>
+                                    <constraint firstItem="jbh-kd-Tli" firstAttribute="centerY" secondItem="tTH-rf-X6x" secondAttribute="centerY" id="yyQ-O7-huH"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E3L-TP-IyB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="E3L-TP-IyB" firstAttribute="bottom" secondItem="2oO-hg-Mda" secondAttribute="bottom" id="2W0-qW-lcN"/>
+                            <constraint firstItem="tTH-rf-X6x" firstAttribute="top" secondItem="2oO-hg-Mda" secondAttribute="bottom" constant="-600" id="4Ge-Nc-NNB"/>
+                            <constraint firstItem="tTH-rf-X6x" firstAttribute="leading" secondItem="2oO-hg-Mda" secondAttribute="leading" constant="15" id="70Q-4M-kFV"/>
                             <constraint firstItem="ZfC-tA-jXp" firstAttribute="top" secondItem="E3L-TP-IyB" secondAttribute="top" id="JE9-Dq-BhN"/>
                             <constraint firstItem="2oO-hg-Mda" firstAttribute="leading" secondItem="E3L-TP-IyB" secondAttribute="leading" id="hKz-su-y4G"/>
                             <constraint firstItem="E3L-TP-IyB" firstAttribute="trailing" secondItem="ZfC-tA-jXp" secondAttribute="trailing" constant="25" id="kay-Mj-ysc"/>
@@ -240,6 +314,12 @@
                             <constraint firstItem="2oO-hg-Mda" firstAttribute="top" secondItem="ZfC-tA-jXp" secondAttribute="bottom" id="tls-rs-7nA"/>
                             <constraint firstItem="ZfC-tA-jXp" firstAttribute="leading" secondItem="E3L-TP-IyB" secondAttribute="leading" constant="25" id="wf9-j1-Kc6"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BYu-9o-JZl" appends="YES" id="1C0-sn-4uT"/>
+                            <outletCollection property="gestureRecognizers" destination="BYu-9o-JZl" appends="YES" id="uBL-E5-iXX"/>
+                            <outletCollection property="gestureRecognizers" destination="BYu-9o-JZl" appends="YES" id="owO-cS-qul"/>
+                            <outletCollection property="gestureRecognizers" destination="BYu-9o-JZl" appends="YES" id="9G6-HZ-Yrj"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Create New Lot" id="uw5-66-RGS">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="ftx-9s-udP">
@@ -251,15 +331,23 @@
                     <connections>
                         <outlet property="done_button" destination="ftx-9s-udP" id="BDT-iI-cYT"/>
                         <outlet property="lot_name_field" destination="vmk-bf-Hun" id="l8R-Au-EbD"/>
+                        <outlet property="lot_region_background" destination="tTH-rf-X6x" id="ua3-Ln-7CE"/>
                         <outlet property="map_view" destination="2oO-hg-Mda" id="9g6-cb-zNd"/>
+                        <outlet property="tap_recognizer" destination="BYu-9o-JZl" id="pk9-nM-8Tx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PKk-bi-OPb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BYu-9o-JZl">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="fel-br-wRn" id="gGd-J8-QJZ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-845" y="508"/>
+            <point key="canvasLocation" x="-845.03816793893122" y="507.74647887323948"/>
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

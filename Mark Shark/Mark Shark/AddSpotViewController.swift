@@ -9,50 +9,58 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class AddSpotViewController: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDelegate {
+class AddSpotViewController: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDelegate, MKMapViewDelegate {
     
     // Set up constants, outlets, classes here //
+
+    let lot_model = lotModel.getInstance()
+    var selected_lot_id: Int?
+    var selected_lot: lot?
     
-    // parking lot location:
-    // 40.2776, -74.007417
+    let spot_model = spotModel.getInstance()
 
     let locationManager = CLLocationManager()
-    var selected_lot: String?
     var mapType = MKMapType.satellite
     
-    @IBOutlet var map_tap_gesture: UITapGestureRecognizer!
+    var placedAnnotation = false
+    
+    @IBOutlet var tap_gesture_recognizer: UITapGestureRecognizer!
     @IBOutlet weak var parking_lot_map_view: MKMapView!
     
     // switches
     @IBOutlet weak var handicapped_switch: UISwitch!
     @IBOutlet weak var faculty_switch: UISwitch!
     @IBOutlet weak var reserved_switch: UISwitch!
-    
-    
+    @IBOutlet weak var spot_number_field: UITextField!
+    @IBOutlet weak var add_spot_button: UIButton!
+
     // Manage view loading, appearing, dissapearing //
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("view loaded")
-        // Do any additional setup after loading the view.
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // precise accuracy needed to pinpoint parking spots
         locationManager.requestWhenInUseAuthorization()
+        parking_lot_map_view.delegate = self
     }
-            
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        locationManager.startUpdatingLocation()
 
+        locationManager.startUpdatingLocation()
         parking_lot_map_view.mapType = .satellite
-        parking_lot_map_view.showsUserLocation = true
-//        parking_lot_map_view.userTrackingMode = .follow.
         
-        if (selected_lot != nil) {
-            self.title = selected_lot
+        if let lot_id = selected_lot_id {
+            selected_lot = lot_model.getLotInfo(lotId: lot_id)
+            if (selected_lot != nil) {
+                self.title = selected_lot?.name
+                parking_lot_map_view.setRegion(selected_lot!.view, animated: true)
+            }
         }
+        view.bringSubviewToFront(add_spot_button) // <- this won't work for some reason
+        view.sendSubviewToBack(parking_lot_map_view)
     }
-    
+        
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         locationManager.stopUpdatingLocation()
@@ -60,28 +68,75 @@ class AddSpotViewController: UIViewController, CLLocationManagerDelegate, UIGest
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        addTestAnnotation()
+        self.view.bringSubviewToFront(add_spot_button)
+//        addTestAnnotation()
     }
-    
-    // Manage location functions, updates //
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let current_location = locations.last{
-            print("Coordinates: \(current_location.coordinate)")
+        
+    // Custom Marker Setup //
 
-            // snap camera to user's current location
-            let center = CLLocationCoordinate2D(latitude: current_location.coordinate.latitude, longitude: current_location.coordinate.longitude)
-            let region = MKCoordinateRegion(center: center, latitudinalMeters: 100, longitudinalMeters: 100)
-            parking_lot_map_view.setRegion(region, animated: true)
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        let identifier = "CustomMarker"
+//
+//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+//        if annotationView == nil {
+//            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+//            annotationView?.image = UIImage(systemName: "mappin.circle.fill") // Use your custom image
+//            annotationView?.canShowCallout = true
+//            annotationView?.isDraggable = true // Enable dragging
+//            annotationView?.centerOffset = CGPoint(x: 0, y: -annotationView!.frame.height / 2) // Adjust the pin position
+//        } else {
+//            annotationView?.annotation = annotation
+//        }
+//
+//        return annotationView
+//    }
 
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: any MKAnnotation) -> MKAnnotationView? {
+        let identifier = "parking spot marker"
+        
+        var annotation_view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        if annotation_view == nil {
+            annotation_view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+//            annotation_view?.image = UIImage(systemName: "mappin.circle.fill") // Use your custom image
+            annotation_view?.canShowCallout = true
+            annotation_view?.isDraggable = true
+        } else {
+            annotation_view?.annotation = annotation
         }
+        
+        return annotation_view
     }
+
+    func mapView(_ mapView: MKMapView, annotationView: MKAnnotationView, didChange newState: MKAnnotationView.DragState, fromOldState oldState: MKAnnotationView.DragState) {
+                
+        switch newState {
+        case .starting:
+            annotationView.transform = CGAffineTransform(scaleX: 1.1, y: 0)
+        case .dragging:
+            annotationView.transform = CGAffineTransform(scaleX: 1.1, y: 0)
+            print(
+                "dragging"
+            )
+        case .ending, .canceling:
+            print("dropped")
+            annotationView.transform = .identity
+            if let annotation = annotationView.annotation {
+                print("New location: \(annotation.coordinate)")
+            }
+            annotationView.dragState = .none
+        default:
+            break
+        }
+        
+    }
+
+    // Manage location functions, updates //
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
         print("Error: \(error)")
     }
-    
-    // UI Management //
     
     // add annotation functions //
     
@@ -91,6 +146,10 @@ class AddSpotViewController: UIViewController, CLLocationManagerDelegate, UIGest
         annotation.title = title
         annotation.subtitle = subtitle
         parking_lot_map_view.addAnnotation(annotation)
+                
+//        let marker = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "parking spot marker")
+        
+        placedAnnotation = true
     }
     
     func addTestAnnotation() {
@@ -100,18 +159,49 @@ class AddSpotViewController: UIViewController, CLLocationManagerDelegate, UIGest
         annotation.subtitle = "test annotation"
         parking_lot_map_view.addAnnotation(annotation)
     }
-    var x = 0
-    //add annotation with tap
-    @IBAction func didTapMap(_ sender: UITapGestureRecognizer) {
-        
-        let tap_location = sender.location(in: parking_lot_map_view)
-        let map_location = parking_lot_map_view.convert(tap_location, toCoordinateFrom: parking_lot_map_view)
 
-        print("tap \(x) at \(tap_location) -> \(map_location)")
-        x+=1
+    //add annotation with tap
+    @IBAction func userDidTap(_ sender: UITapGestureRecognizer) {
         
-        addNewAnnotation(coordinate: map_location, title: "Spot #", subtitle: "lot #")
+        dismiss_keyboard(self)
+        
+        if !placedAnnotation {
+            let tap_location = sender.location(in: parking_lot_map_view)
+            let map_location = parking_lot_map_view.convert(tap_location, toCoordinateFrom: parking_lot_map_view)
+                        
+            addNewAnnotation(coordinate: map_location, title: "Spot #", subtitle: "lot #")
+            
+            add_spot_button.isEnabled = true
+        }
     }
+    
+    @IBAction func dismiss_keyboard(_ sender: Any) {
+        spot_number_field.endEditing(true)
+    }
+    
+    @IBAction func add_spot(_ sender: Any) {
+        
+        let new_spot = parking_lot_map_view.annotations.last
+                
+        let spot_number = Int(spot_number_field.text!) ?? 0
+        let location = new_spot?.coordinate
+        let isHandicapped = handicapped_switch.isOn
+        let isFaculty = faculty_switch.isOn
+        let isReserved = faculty_switch.isOn
+        let spot_id = UUID.init()
+        
+        spot_model.addSpot(number: spot_number, location: location!, isHandicapped: isHandicapped, isFaculty: isFaculty, isReserved: isReserved, spotId: spot_id)
+        
+        parking_lot_map_view.removeAnnotations(parking_lot_map_view.annotations)
+
+        handicapped_switch.isOn = false
+        faculty_switch.isOn = false
+        reserved_switch.isOn = false
+        spot_number_field.text = ""
+        add_spot_button.isEnabled = false
+
+        placedAnnotation = false
+    }
+    
 
 }
-

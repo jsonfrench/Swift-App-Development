@@ -21,10 +21,10 @@ class SelectLotTableViewController: UITableViewController {
     let cell_height: CGFloat = 50
     let cell_reuse_identifier = "lot number"
     
-    // lots should have coordinate data - struct or dict?
-    var lots: [String] = ["Lot #14", "Lot #15"]
-    var selected_lot: String?
-    
+    let lot_model = lotModel.getInstance()
+    var selected_lot_id: Int?
+    var lots: [lot] = []
+
     // Manage view loading, dissapearing, appearing... //
 
     override func viewDidLoad() {
@@ -35,6 +35,8 @@ class SelectLotTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        lots = lot_model.getLots()
         tableView.reloadData()
     }
     
@@ -54,7 +56,7 @@ class SelectLotTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cell_reuse_identifier, for: indexPath) as! SelectLotViewCell
-        cell.option_title.text = self.lots[indexPath.row]
+        cell.option_title.text = self.lots[indexPath.row].name
         return cell
     }
 
@@ -63,14 +65,14 @@ class SelectLotTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selected_lot = lots[indexPath.row]
+        selected_lot_id = lots[indexPath.row].lotId
         performSegue(withIdentifier: "add spot segue", sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "add spot segue") {
             let destinationViewController = segue.destination as! AddSpotViewController
-            destinationViewController.selected_lot = selected_lot
+            destinationViewController.selected_lot_id = selected_lot_id
         }
         if (segue.identifier == "add lot segue") {
             let destinationViewController = segue.destination as! AddLotViewController
@@ -79,13 +81,13 @@ class SelectLotTableViewController: UITableViewController {
     }
     
     // Add new lot to the list
+    func addLot(name:String, view:MKCoordinateRegion, lotId: Int) {
+        let new_lot = lot(name: name, view: view, lotId: lotId)
+        lots.append(new_lot)
+    }
+    
     @IBAction func didSelectAddLot(_ sender: Any) {
         performSegue(withIdentifier: "add lot segue", sender: self)
     }
-    
-    func addLot(name: String) {
-        lots.append(name)
-    }
-    
     
 }
