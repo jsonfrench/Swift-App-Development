@@ -187,13 +187,29 @@ class AddSpotViewController: UIViewController, CLLocationManagerDelegate, UIGest
         let location = new_spot?.coordinate
         let isHandicapped = handicapped_switch.isOn
         let isFaculty = faculty_switch.isOn
-        let isReserved = faculty_switch.isOn
+        let isReserved = reserved_switch.isOn
         let spot_id = UUID.init()
         
         spot_model.addSpot(number: spot_number, location: location!, isHandicapped: isHandicapped, isFaculty: isFaculty, isReserved: isReserved, spotId: spot_id)
         
         parking_lot_map_view.removeAnnotations(parking_lot_map_view.annotations)
 
+        
+        let posted_spot = spot(
+            number: Int(spot_number_field.text!) ?? 0,
+            location: new_spot?.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0), // <- unwrapping an optional doesn't seem to work with structs
+            isHandicapped: handicapped_switch.isOn,
+            isFaculty: faculty_switch.isOn,
+            isReserved: reserved_switch.isOn,
+            spotId: UUID.init()
+        )
+        
+//        spot_model.addSpot(spot: posted_spot)
+        
+        reset_settings()
+    }
+    
+    func reset_settings(){
         handicapped_switch.isOn = false
         faculty_switch.isOn = false
         reserved_switch.isOn = false

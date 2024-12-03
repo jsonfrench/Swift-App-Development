@@ -6,6 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FF271CDB2CFF50C00022A752 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF271CDA2CFF50C00022A752 /* GoogleService-Info.plist */; };
+		FF271CDC2CFF50C00022A752 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF271CDA2CFF50C00022A752 /* GoogleService-Info.plist */; };
+		FF271CDD2CFF50C00022A752 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF271CDA2CFF50C00022A752 /* GoogleService-Info.plist */; };
+		FF271CE02CFF51880022A752 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FF271CDF2CFF51880022A752 /* FirebaseAnalytics */; };
+		FF271CE22CFF58560022A752 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FF271CE12CFF58560022A752 /* FirebaseDatabase */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		FFB1BFDC2CBF696A004ADC2B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF271CDA2CFF50C00022A752 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFB1BFC52CBF6968004ADC2B /* Mark Shark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mark Shark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB1BFDB2CBF696A004ADC2B /* Mark SharkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mark SharkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB1BFE52CBF696A004ADC2B /* Mark SharkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mark SharkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF271CE22CFF58560022A752 /* FirebaseDatabase in Frameworks */,
+				FF271CE02CFF51880022A752 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +103,7 @@
 				FFB1BFDE2CBF696A004ADC2B /* Mark SharkTests */,
 				FFB1BFE82CBF696A004ADC2B /* Mark SharkUITests */,
 				FFB1BFC62CBF6968004ADC2B /* Products */,
+				FF271CDA2CFF50C00022A752 /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +137,8 @@
 			);
 			name = "Mark Shark";
 			packageProductDependencies = (
+				FF271CDF2CFF51880022A752 /* FirebaseAnalytics */,
+				FF271CE12CFF58560022A752 /* FirebaseDatabase */,
 			);
 			productName = "Mark Shark";
 			productReference = FFB1BFC52CBF6968004ADC2B /* Mark Shark.app */;
@@ -208,6 +222,9 @@
 			);
 			mainGroup = FFB1BFBC2CBF6968004ADC2B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FF271CDE2CFF51880022A752 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FFB1BFC62CBF6968004ADC2B /* Products */;
 			projectDirPath = "";
@@ -225,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF271CDB2CFF50C00022A752 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF271CDC2CFF50C00022A752 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF271CDD2CFF50C00022A752 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +589,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FF271CDE2CFF51880022A752 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FF271CDF2CFF51880022A752 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF271CDE2CFF51880022A752 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		FF271CE12CFF58560022A752 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF271CDE2CFF51880022A752 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FFB1BFBD2CBF6968004ADC2B /* Project object */;
 }

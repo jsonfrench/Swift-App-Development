@@ -7,6 +7,9 @@
 
 import Foundation
 import MapKit
+import Firebase
+import FirebaseDatabase
+
 
 struct spot
 {
@@ -16,11 +19,27 @@ struct spot
     var isFaculty: Bool
     var isReserved: Bool
     var spotId: UUID
+    
+    func toAnyObject () -> Dictionary<String, Any> {
+        return [
+            "number": self.number,
+            "location" : self.location,
+            "isHandicapped": self.isHandicapped,
+            "isFaculty": self.isFaculty,
+            "isReserved": self.isReserved,
+            "spotId": self.spotId
+        ]
+    }
+
 }
 
 class spotModel {
     
     var spots:[spot] = []
+
+    var spot_ref = Database.database().reference(withPath: "Spot")
+    
+    // showAlert(td: "ToDo Posted")
     
     // commuter lot location:
     // 40.2776, -74.007417
@@ -45,6 +64,13 @@ class spotModel {
     func addSpot(number:Int, location:CLLocationCoordinate2D, isHandicapped: Bool, isFaculty: Bool, isReserved: Bool, spotId: UUID) {
         let new_spot = spot(number: number, location: location, isHandicapped: isHandicapped, isFaculty: isFaculty, isReserved: isReserved, spotId: spotId)
         spots.append(new_spot)
+        // showAlert(td: "ToDo Posted")
+    }
+    
+    func addSpot(spot: spot){
+        let spot_ref = Database.database().reference(withPath: "Spots")
+        let new_spot_ref = spot_ref.child(spot.spotId.description)
+        new_spot_ref.setValue (spot.toAnyObject())
     }
  
     func getSpotInfo(spotId: UUID) -> spot? {
