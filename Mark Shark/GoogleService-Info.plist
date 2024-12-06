@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyAJb_G-F08-vOoFyCgHCKUVuRrhgp7iDI0</string>
+	<string>AIzaSyDpGVkiAF1t52lhGWkE0S1ORtImdvQ0J7Q</string>
 	<key>GCM_SENDER_ID</key>
-	<string>931964198268</string>
+	<string>50886644088</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>edu.monmouth.csse337.s1338331.ToDo-App</string>
+	<string>edu.monmouth.s1338331.Mark-Shark</string>
 	<key>PROJECT_ID</key>
-	<string>todo-app-26f6f</string>
+	<string>mark-shark-60a6b</string>
 	<key>STORAGE_BUCKET</key>
-	<string>todo-app-26f6f.firebasestorage.app</string>
+	<string>mark-shark-60a6b.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:931964198268:ios:531e202496f2744c1958f9</string>
+	<string>1:50886644088:ios:2674672383a5e851d3f88d</string>
+	<key>DATABASE_URL</key>
+	<string>https://mark-shark-60a6b-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

@@ -6,42 +6,18 @@
 //
 
 import Foundation
-import MapKit
 import Firebase
 import FirebaseDatabase
-
-
-struct spot
-{
-    var number: Int
-    var location: CLLocationCoordinate2D
-    var isHandicapped: Bool
-    var isFaculty: Bool
-    var isReserved: Bool
-    var spotId: UUID
-    
-    func toAnyObject () -> Dictionary<String, Any> {
-        return [
-            "number": self.number,
-            "location" : self.location,
-            "isHandicapped": self.isHandicapped,
-            "isFaculty": self.isFaculty,
-            "isReserved": self.isReserved,
-            "spotId": self.spotId
-        ]
-    }
-
-}
+import FirebaseStorage
+import MapKit
 
 class spotModel {
     
-    var spots:[spot] = []
-
-    var spot_ref = Database.database().reference(withPath: "Spot")
+    var spots:[Spot] = []
     
     // showAlert(td: "ToDo Posted")
     
-    // commuter lot location:
+    // commuter spot location:
     // 40.2776, -74.007417
 
     // make the class object a Singleton
@@ -57,23 +33,18 @@ class spotModel {
         // do something on initialization
     }
     
-    func getSpots() -> [spot] {
+    func getSpots() -> [Spot] {
         return self.spots
     }
-    
-    func addSpot(number:Int, location:CLLocationCoordinate2D, isHandicapped: Bool, isFaculty: Bool, isReserved: Bool, spotId: UUID) {
-        let new_spot = spot(number: number, location: location, isHandicapped: isHandicapped, isFaculty: isFaculty, isReserved: isReserved, spotId: spotId)
-        spots.append(new_spot)
-        // showAlert(td: "ToDo Posted")
-    }
-    
-    func addSpot(spot: spot){
-        let spot_ref = Database.database().reference(withPath: "Spots")
-        let new_spot_ref = spot_ref.child(spot.spotId.description)
+
+    func addSpot(spot: Spot, lot: Lot){
+        let path = lot.lotId.uuidString
+        let spot_ref = Database.database().reference(withPath: "Lots/\(path)/Spots")
+        let new_spot_ref = spot_ref.child(spot.spotId.uuidString)
         new_spot_ref.setValue (spot.toAnyObject())
     }
  
-    func getSpotInfo(spotId: UUID) -> spot? {
+    func getSpotInfo(spotId: UUID) -> Spot? {
         if let spot = spots.first(where: {$0.spotId == spotId}) {
             return spot
         } else {

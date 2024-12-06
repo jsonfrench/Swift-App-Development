@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF271CDB2CFF50C00022A752 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF271CDA2CFF50C00022A752 /* GoogleService-Info.plist */; };
-		FF271CDC2CFF50C00022A752 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF271CDA2CFF50C00022A752 /* GoogleService-Info.plist */; };
-		FF271CDD2CFF50C00022A752 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF271CDA2CFF50C00022A752 /* GoogleService-Info.plist */; };
 		FF271CE02CFF51880022A752 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FF271CDF2CFF51880022A752 /* FirebaseAnalytics */; };
 		FF271CE22CFF58560022A752 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FF271CE12CFF58560022A752 /* FirebaseDatabase */; };
+		FFC02E9C2D02DD9300632A3F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FFC02E9B2D02DD9300632A3F /* FirebaseAuth */; };
+		FFC02E9E2D02DD9300632A3F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FFC02E9D2D02DD9300632A3F /* FirebaseStorage */; };
+		FFC02EA42D02EB7C00632A3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFC02EA32D02EB7C00632A3F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,10 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FF271CDA2CFF50C00022A752 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFB1BFC52CBF6968004ADC2B /* Mark Shark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mark Shark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB1BFDB2CBF696A004ADC2B /* Mark SharkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mark SharkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB1BFE52CBF696A004ADC2B /* Mark SharkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mark SharkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFC02EA32D02EB7C00632A3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -75,6 +75,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF271CE22CFF58560022A752 /* FirebaseDatabase in Frameworks */,
+				FFC02E9E2D02DD9300632A3F /* FirebaseStorage in Frameworks */,
+				FFC02E9C2D02DD9300632A3F /* FirebaseAuth in Frameworks */,
 				FF271CE02CFF51880022A752 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,7 +105,7 @@
 				FFB1BFDE2CBF696A004ADC2B /* Mark SharkTests */,
 				FFB1BFE82CBF696A004ADC2B /* Mark SharkUITests */,
 				FFB1BFC62CBF6968004ADC2B /* Products */,
-				FF271CDA2CFF50C00022A752 /* GoogleService-Info.plist */,
+				FFC02EA32D02EB7C00632A3F /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +141,8 @@
 			packageProductDependencies = (
 				FF271CDF2CFF51880022A752 /* FirebaseAnalytics */,
 				FF271CE12CFF58560022A752 /* FirebaseDatabase */,
+				FFC02E9B2D02DD9300632A3F /* FirebaseAuth */,
+				FFC02E9D2D02DD9300632A3F /* FirebaseStorage */,
 			);
 			productName = "Mark Shark";
 			productReference = FFB1BFC52CBF6968004ADC2B /* Mark Shark.app */;
@@ -242,7 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF271CDB2CFF50C00022A752 /* GoogleService-Info.plist in Resources */,
+				FFC02EA42D02EB7C00632A3F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +254,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF271CDC2CFF50C00022A752 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +261,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF271CDD2CFF50C00022A752 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,6 +613,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF271CDE2CFF51880022A752 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		FFC02E9B2D02DD9300632A3F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF271CDE2CFF51880022A752 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		FFC02E9D2D02DD9300632A3F /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF271CDE2CFF51880022A752 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
