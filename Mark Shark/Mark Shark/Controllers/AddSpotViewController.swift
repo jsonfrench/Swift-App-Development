@@ -73,24 +73,6 @@ class AddSpotViewController: UIViewController, CLLocationManagerDelegate, UIGest
     }
         
     // Custom Marker Setup //
-
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        let identifier = "CustomMarker"
-//
-//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-//        if annotationView == nil {
-//            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-//            annotationView?.image = UIImage(systemName: "mappin.circle.fill") // Use your custom image
-//            annotationView?.canShowCallout = true
-//            annotationView?.isDraggable = true // Enable dragging
-//            annotationView?.centerOffset = CGPoint(x: 0, y: -annotationView!.frame.height / 2) // Adjust the pin position
-//        } else {
-//            annotationView?.annotation = annotation
-//        }
-//
-//        return annotationView
-//    }
-
     
     func mapView(_ mapView: MKMapView, viewFor annotation: any MKAnnotation) -> MKAnnotationView? {
         let identifier = "parking spot marker"

@@ -81,21 +81,15 @@ class AddLotViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     @IBAction func didSelectDone(_ sender: Any) {
-        
-        print("got to function!")
-        
+                
         let new_lot = Lot(
             lotId: UUID(),
             name: lot_name_field.text!,
             view: map_view.region
             )
-        
-        print("made lot!")
-        
+                
         lot_model.addLot(lot: new_lot)
-        
-        print("called add_lot!")
-        
+                
         navigationController?.popViewController(animated: true)
     }
     

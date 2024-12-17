@@ -57,7 +57,6 @@ class lotModel {
 
         }
     }
-
     
     func addLot(lot: Lot) {
         lots.append(lot)
@@ -65,6 +64,13 @@ class lotModel {
         let newLotRef = lotDBref.child(lot.lotId.uuidString)
         newLotRef.setValue(lot.toAnyObject())
     }
+
+    func deleteLot (lot: Lot) {
+        let lotDBref = Database.database().reference(withPath: "Lots")
+        let newLotRef = lotDBref.child(lot.lotId.uuidString)
+        newLotRef.removeValue()
+    }
+
     
     func getLotInfo(lotId: UUID) -> Lot? {
         if let lot = lots.first(where: {$0.lotId == lotId}) {
@@ -73,7 +79,6 @@ class lotModel {
             return nil
         }
     }
-    
 
     func addSampleLots() {
         let exampleLots: [Lot] = [

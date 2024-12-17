@@ -59,7 +59,6 @@ class spotModel {
     func cancelObserver() {
         if let observerHandle = spotObserverHandle {
             spotDBref.removeObserver(withHandle: observerHandle)
-
         }
     }
 
@@ -72,6 +71,12 @@ class spotModel {
         let spot_ref = Database.database().reference(withPath: "Spots")
         let new_spot_ref = spot_ref.child(spot.spotId.uuidString)
         new_spot_ref.setValue (spot.toAnyObject())
+    }
+    
+    func deleteSpot (spot: Spot) {
+        let spotDBref = Database.database().reference(withPath: "Spots")
+        let newSpotRef = spotDBref.child(spot.spotId.uuidString)
+        newSpotRef.removeValue()
     }
  
     func getSpotInfo(spotId: UUID) -> Spot? {

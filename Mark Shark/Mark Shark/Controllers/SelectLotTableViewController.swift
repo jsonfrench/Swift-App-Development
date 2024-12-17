@@ -23,8 +23,9 @@ class SelectLotTableViewController: UITableViewController {
     
     let lot_model = lotModel.sharedInstance
     var selected_lot_id: UUID?
-    var lots: [Lot] = []
-    
+
+    let spot_model = spotModel.sharedInstance
+
     let notificationLot = Notification.Name(rawValue: lotNotificationKey)
 
     // Manage view loading, dissapearing, appearing... //
@@ -43,6 +44,7 @@ class SelectLotTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         createObservers()
         lot_model.observeLots()
+        spot_model.observeSpots()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -125,7 +127,7 @@ class SelectLotTableViewController: UITableViewController {
         }
         deleteLot.backgroundColor = .red
 
-        let configuration = UISwipeActionsConfiguration(actions: [viewLot])
+        let configuration = UISwipeActionsConfiguration(actions: [viewLot, deleteLot])
         configuration.performsFirstActionWithFullSwipe = false
         return configuration
     }
@@ -137,10 +139,25 @@ class SelectLotTableViewController: UITableViewController {
     }
 
     func handleDelete(at indexPath: IndexPath) {
-//        selected_lot_id = lots[indexPath.row].lotId
-    }
+        let lot_to_delete = lot_model.lots[indexPath.row]
+        var spots_to_delete: [Spot] = []
+                
+        for spot in spot_model.spots{
+            if spot.lotId.uuidString == lot_to_delete.lotId.uuidString{
+                spots_to_delete.append(spot)
+            }
+        }
 
-    
-    
+//        print("deleting lot \(lot_to_delete.name)")
+//        for spot_to_delete in spots_to_delete{
+//            print(spot_to_delete.number)
+//        }
+        
+        lot_model.deleteLot(lot: lot_to_delete)
+        for spot_to_delete in spots_to_delete{
+            spot_model.deleteSpot(spot: spot_to_delete)
+        }
+
+    }
     
 }
