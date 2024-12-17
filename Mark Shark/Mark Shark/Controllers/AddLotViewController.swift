@@ -87,6 +87,8 @@ class AddLotViewController: UIViewController, CLLocationManagerDelegate {
             name: lot_name_field.text!,
             view: map_view.region
             )
+        
+        print(new_lot)
                 
         lot_model.addLot(lot: new_lot)
                 

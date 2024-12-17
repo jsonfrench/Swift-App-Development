@@ -112,6 +112,4 @@ class lotModel {
             addLot(lot: lot)
         }
     }
-
-    
 }
