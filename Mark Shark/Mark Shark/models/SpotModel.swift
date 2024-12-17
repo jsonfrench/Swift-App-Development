@@ -14,7 +14,11 @@ import MapKit
 class spotModel {
     
     var spots:[Spot] = []
-    
+
+    let spotDBref = Database.database().reference(withPath: "Spots")
+    var spotObserverHandle: UInt?
+    let spotsNotification = Notification.Name(rawValue: lotNotificationKey)
+
     // showAlert(td: "ToDo Posted")
     
     // commuter spot location:
@@ -33,13 +37,39 @@ class spotModel {
         // do something on initialization
     }
     
+    func observeSpots() {
+        
+        spotObserverHandle = spotDBref.observe(.value, with: {snapshot in
+            var tempSpots:[Spot] = []
+            for child in snapshot.children  {
+                if let data = child as? DataSnapshot {
+                    if let aSpot = Spot(snapshot: data) {
+                        tempSpots.append(aSpot)
+                    }
+                   
+                }
+            }
+            self.spots.removeAll()
+            self.spots = tempSpots
+            // need to notify
+            NotificationCenter.default.post(name: self.spotsNotification, object: nil)
+        })
+    }
+    
+    func cancelObserver() {
+        if let observerHandle = spotObserverHandle {
+            spotDBref.removeObserver(withHandle: observerHandle)
+
+        }
+    }
+
+    
     func getSpots() -> [Spot] {
         return self.spots
     }
 
     func addSpot(spot: Spot, lot: Lot){
-        let path = lot.lotId.uuidString
-        let spot_ref = Database.database().reference(withPath: "Lots/\(path)/Spots")
+        let spot_ref = Database.database().reference(withPath: "Spots")
         let new_spot_ref = spot_ref.child(spot.spotId.uuidString)
         new_spot_ref.setValue (spot.toAnyObject())
     }

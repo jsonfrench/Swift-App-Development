@@ -24,6 +24,7 @@ struct Lot {
     }
     
     init? (snapshot: DataSnapshot) {
+        
         if let value = snapshot.value as? [String: Any]
         {
             guard

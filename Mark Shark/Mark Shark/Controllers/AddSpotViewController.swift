@@ -191,7 +191,8 @@ class AddSpotViewController: UIViewController, CLLocationManagerDelegate, UIGest
             isFaculty: faculty_switch.isOn,
             isHandicapped: handicapped_switch.isOn,
             isReserved: reserved_switch.isOn,
-            spotId: UUID.init()
+            spotId: UUID.init(),
+            lotId: selected_lot_id!
         )
         
         spot_model.addSpot(spot: new_spot, lot: selected_lot!)

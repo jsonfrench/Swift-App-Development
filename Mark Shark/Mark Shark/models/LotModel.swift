@@ -15,7 +15,7 @@ class lotModel {
     
     var lots:[Lot] = []
 
-    let lotsNotification = Notification.Name("edu.monmouth.csse337.s1338331.MarkShark.lots")
+    let lotsNotification = Notification.Name(rawValue: lotNotificationKey)
 
     // make the class object a Singleton
     static let sharedInstance = lotModel()
@@ -40,10 +40,8 @@ class lotModel {
             for child in snapshot.children  {
                 if let data = child as? DataSnapshot {
                     if let aLot = Lot(snapshot: data) {
-                        // print (aLot)
                         tempLots.append(aLot)
                     }
-                   
                 }
             }
             self.lots.removeAll()

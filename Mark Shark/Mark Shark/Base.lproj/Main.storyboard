@@ -232,6 +232,7 @@
                         <outlet property="add_lot_button" destination="FFy-Da-4yS" id="TWp-cN-NfM"/>
                         <segue destination="Kkb-28-Ibq" kind="show" identifier="add spot segue" id="syx-T5-bY2"/>
                         <segue destination="fel-br-wRn" kind="show" identifier="add lot segue" id="K1X-fS-ve7"/>
+                        <segue destination="Zbd-ia-cCe" kind="show" identifier="view lot segue" id="Apr-1A-pZ0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KtF-tZ-emK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -344,6 +345,37 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-845.03816793893122" y="507.74647887323948"/>
+        </scene>
+        <!--Lot View-->
+        <scene sceneID="XvZ-BQ-RND">
+            <objects>
+                <viewController id="Zbd-ia-cCe" customClass="LotViewController" customModule="Mark_Shark" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JL6-2T-LC3" customClass="LotViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4RL-Eu-GX3">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Uva-mG-gXn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Uva-mG-gXn" firstAttribute="bottom" secondItem="4RL-Eu-GX3" secondAttribute="bottom" id="SYs-ap-4tX"/>
+                            <constraint firstItem="Uva-mG-gXn" firstAttribute="trailing" secondItem="4RL-Eu-GX3" secondAttribute="trailing" id="aDJ-Oj-Ki5"/>
+                            <constraint firstItem="4RL-Eu-GX3" firstAttribute="leading" secondItem="Uva-mG-gXn" secondAttribute="leading" id="spx-Ez-Mnj"/>
+                            <constraint firstItem="4RL-Eu-GX3" firstAttribute="top" secondItem="Uva-mG-gXn" secondAttribute="top" id="uNM-Or-Bzi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Lot View" id="4oF-On-ccl"/>
+                    <connections>
+                        <outlet property="parking_lot_map_view" destination="4RL-Eu-GX3" id="yLb-71-WYy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bqe-9f-bhB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18" y="508"/>
         </scene>
     </scenes>
     <resources>

@@ -18,8 +18,9 @@ struct Spot {
     var isFaculty: Bool
     var isReserved: Bool
     var spotId: UUID
+    var lotId: UUID
         
-    init (number: Int, location: CLLocationCoordinate2D, isFaculty: Bool, isHandicapped: Bool, isReserved: Bool, spotId: UUID) {
+    init (number: Int, location: CLLocationCoordinate2D, isFaculty: Bool, isHandicapped: Bool, isReserved: Bool, spotId: UUID, lotId: UUID) {
         self.ref = nil
         self.number = number
         self.location = location
@@ -27,6 +28,7 @@ struct Spot {
         self.isHandicapped = isHandicapped
         self.isReserved = isReserved
         self.spotId = spotId
+        self.lotId = lotId
     }
     
     init? (snapshot: DataSnapshot) {
@@ -45,7 +47,9 @@ struct Spot {
                 let isReservedString = value["isReserved"] as? String,
                 let isReserved = Bool(isReservedString),
                 let spotIdString = value["spotId"] as? String,
-                let spotId = UUID(uuidString: spotIdString)
+                let spotId = UUID(uuidString: spotIdString),
+                let lotIdString = value["lotId"] as? String,
+                let lotId = UUID(uuidString: lotIdString)
             else {
                 return nil
             }
@@ -57,6 +61,7 @@ struct Spot {
             self.isReserved = isReserved
             self.isFaculty = isFaculty
             self.spotId = spotId
+            self.lotId = lotId
         } else {
             return nil
         }
@@ -73,7 +78,8 @@ struct Spot {
             "isHandicapped": String(self.isHandicapped),
             "isFaculty": String(self.isFaculty),
             "isReserved": String(self.isReserved),
-            "spotId": self.spotId.uuidString
+            "spotId": self.spotId.uuidString,
+            "lotId": self.lotId.uuidString
         ]
     }
     
